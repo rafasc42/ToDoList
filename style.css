@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+#container{
+    margin: 5em auto;
+    width: 80vw;
+    min-height:50vh;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button{
+    margin-bottom: 10px;
+}
+
+input{
+    height: 30px;
+    padding: 5px;
+}
+
+#submit {
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #00C851; /* green friendly shade */
+    color: white;
+    border-radius: 4px; /* round the edges of the button */
+    text-align: center; /* center the text within the button */
+    font-size: 16px;
+    padding: 8px; /* add some padding to the button */
+}
+
+button {
+    height: 35px;
+    width: 10%;
+    max-width: 75px;
+    min-width: 40px;
+    background-color: #ff4444; /* red friendly shade */
+    color: white;
+    border-radius: 4px; /* round the edges of the button */
+    text-align: center; /* center the text within the button */
+    font-size: 16px;
+    padding: 8px; /* add some padding to the button */
+}
+
+#task-list{
+    margin-top: 10px;
+    padding: 0;
+}
+
+#task-list li{
+    width: 100%;
+    list-style: none;
+    height: 35px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#task-list li p{
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
