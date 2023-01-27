@@ -43,7 +43,7 @@ input{
     color: white;
     border-radius: 4px; /* round the edges of the button */
     text-align: center; /* center the text within the button */
-    font-size: 16px;
+    font-size: 14px;
     padding: 8px; /* add some padding to the button */
 }
 
@@ -57,6 +57,19 @@ button {
     border-radius: 4px; /* round the edges of the button */
     text-align: center; /* center the text within the button */
     font-size: 16px;
+    padding: 8px; /* add some padding to the button */
+}
+
+#deleteAll{
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: auto;
+    background-color: purple;
+    color: white;
+    border-radius: 4px; /* round the edges of the button */
+    text-align: center; /* center the text within the button */
+    font-size: 14px;
     padding: 8px; /* add some padding to the button */
 }
 
