@@ -4,49 +4,45 @@ let listEl = document.querySelector("#task-list");
 
 window.onload = function(){
     for (let i = 0; i < localStorage.length; i++) {
-        let item = document.createElement("li");
-        let pEl = document.createElement("p");
-        let delButton = document.createElement("button");
-        delButton.textContent = "x";
         let key = localStorage.key(i);
         let inputText = localStorage.getItem(key);
-        pEl.textContent = inputText;
-        item.setAttribute("data-key", key);
-        item.appendChild(pEl);
-        item.appendChild(delButton);
-        listEl.appendChild(item);
-        delButton.addEventListener('click', (event)=>{
-            delTask(event);
-        });
-        pEl.addEventListener('click', (event)=>{
-            editTask(event);
-        });
+        createListItem(inputText, key);
     }
 };
+
+function createListItem(input, key){
+
+    let item = document.createElement("li");
+    item.setAttribute("data-key", key);
+
+    let pEl = document.createElement("p");
+    pEl.textContent = input.value;
+    pEl.addEventListener('click', (event)=>{
+        editTask(event);
+    });
+
+    let delButton = document.createElement("button");
+    delButton.textContent = "x";
+    delButton.addEventListener('click', (event)=>{
+        delTask(event);
+    });
+    
+    
+
+    item.appendChild(pEl);
+    item.appendChild(delButton);
+    listEl.appendChild(item);
+}
 
 function addTask()
 {
     let inputText = document.querySelector("#user-input"); 
     if(inputText.value != "")
     {
-        let item = document.createElement("li");
-        let pEl = document.createElement("p");
-        let delButton = document.createElement("button");
-        delButton.textContent = "x";
         let key = Date.now().toString();
+        createListItem(inputText, key);
         localStorage.setItem(key, inputText.value);
-        item.setAttribute("data-key", key);
-        pEl.innerHTML = inputText.value;
-        item.appendChild(pEl);
-        item.appendChild(delButton);
-        listEl.appendChild(item);
         inputText.value = "";
-        delButton.addEventListener('click', (event)=>{
-            delTask(event);
-        });
-        pEl.addEventListener('click', (event)=>{
-            editTask(event);
-        });
     } else {
         alert("A tarefa esta vazia! Digite uma tarefa.");
     }
@@ -71,8 +67,6 @@ function delTask(event){
 
     localStorage.removeItem(key);
     parent.remove();
-    // let delButton = event.target;
-    // delButton.parentNode.remove();
 }
 
 function deleteAll(){
@@ -81,4 +75,4 @@ function deleteAll(){
 }
 
 addButton.addEventListener('click', addTask);
-delAll.addEventListener('click', deleteAll)
+delAll.addEventListener('click', deleteAll);
